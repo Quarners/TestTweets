@@ -2,37 +2,18 @@
 
 ### Requerimientos 
 
-* python >= 3.7
+Para ver los requerimientos visite requirements.txt
 
 ### Configurar Crendenciales
 
-`TWITTER_CONSUMERKEY = `
-
-`TWITTER_CONSUMER_SECRETKEY = `
-
-`TWITTER_ACESSTOKEN = `
-
-`MONGODB_HOST = `
-
-`MONGODB_USERNAME = `
-
-`MONGODB_PASSWORD = `
-
-`MONGODB_NAME = `
-
-`ENV = developtment`
-
-`IBM_API_KEY = `
-
-`IBM_VERSION = 2020-04-01`
-
-`IBM_SERVICE_URL = `
-
-`IBM_ASSISTANT_ID = `
-
+Cree un archivo .env con las credenciales de la estructura en example.env
 
 ### Ejecutar proyecto 
 
+Para instalar los requerimientos ejecute:
+
 `pip install requeriments.txt `
+
+Para ejecutar el proyecto ejecute:
 
 `python main.py `
