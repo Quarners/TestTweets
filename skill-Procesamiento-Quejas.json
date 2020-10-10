@@ -1,0 +1,152 @@
+{
+  "intents": [
+    {
+      "intent": "i_want_complaint",
+      "examples": [
+        {
+          "text": "El covid-19 es una cortina de humo para que los gobiernos roben"
+        },
+        {
+          "text": "El coronavirus es un invento de las farmaceuticas para vender medicamentos caros"
+        },
+        {
+          "text": "No conozco a nadie enfermo de coronavirus, ¿por qué debería creer que es real?"
+        },
+        {
+          "text": "Nos mata el coronavirus o nos mata el hambre"
+        },
+        {
+          "text": "La gente no debe atenerse a que el gobierno les solucione todo"
+        },
+        {
+          "text": "En los hospitales están matando a las personas con coronavirus"
+        },
+        {
+          "text": "Están trayendo infectados en aviones de carga"
+        },
+        {
+          "text": "Están manipulando las estadísticas para que la gente no entre en pánico"
+        },
+        {
+          "text": "Las pruebas están tardando demasiado en llegar y la gente conoce su diagnóstico cuando ya murió"
+        },
+        {
+          "text": "Las ayudas sociales propuestas por el gobierno dan espacio a que se genere corrupción"
+        },
+        {
+          "text": "Las estadísticas preveen cientos de miles de muertos en unas semanas"
+        },
+        {
+          "text": "Es irresponsable que el gobierno obligue a las personas a encerrarse sin proveerles un mínimo vital"
+        },
+        {
+          "text": "El coronavirus es creado en laboratorio con uniones del virus del VIH y el SARS"
+        },
+        {
+          "text": "Las personas mueren en las calles o solas en sus casas"
+        },
+        {
+          "text": "Están dejando morir a los más ancianos"
+        }
+      ],
+      "description": "Publicaciones malintencionadas o con información falsa sobre el covid 19"
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bienvenido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hola. ¿Cómo puedo ayudarle?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bienvenido",
+      "previous_sibling": "node_7_1588393563579"
+    },
+    {
+      "type": "standard",
+      "title": "En otras cosas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No le he entendido. Intente reformular la consulta."
+              },
+              {
+                "text": "¿Puede expresarse con otras palabras? No le he entendido."
+              },
+              {
+                "text": "No entendí el significado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "En otras cosas",
+      "previous_sibling": "Bienvenido",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "complaint",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "es una denuncia"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#i_want_complaint",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1588393563579"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Querías decir:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Ninguna de las anteriores"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Querías decir:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Procesamiento Quejas",
+  "language": "es",
+  "description": ""
+}
