@@ -14,6 +14,14 @@ Para instalar los requerimientos ejecute:
 
 `pip install requeriments.txt `
 
+Despues ejecutar 
+
+`chmod +x install-language.sh` 
+
+y ejecutar 
+
+`./install-language.sh`
+
 Para ejecutar el proyecto ejecute:
 
 `python main.py `
